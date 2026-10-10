@@ -9,7 +9,7 @@ const CONFIG = {
   place: "Salos de eventos Komanche S,A",
   address: "Agrega aquí la dirección completa, ciudad y estado",
   mapsQuery: "Nombre del lugar, ciudad, estado",
-  sheetsEndpoint: "https://script.google.com/macros/s/AKfycbwtSd0L_UByywwe0pN-Y3ojyWWQOua-R3cCtX8NWOO6zd6Jquxqex1NCycfMKcvXQ-8/exec"
+  sheetsEndpoint: "https://script.google.com/macros/s/AKfycbyBqXciDwC5Kd1seAVBlZHnMYPmlOnERirczO19aM7MybE-Waqi0x6jV5eX2Ipg-Ai4/exec"
 };
 
 const $ = (id) => document.getElementById(id);
