@@ -7,8 +7,8 @@ const CONFIG = {
   date: "Sábado 24 de diciembre de 2026",
   time: "8:00 p. m.",
   place: "Salos de eventos ",
-  address: "Francisco Castrejón 75, 9na Demarcació a un costado del Jardin de niños (Carlos Obregon Santacilia),Col, el Bondho, Mixquiahula de Juarez, Hgo.",
-  mapsQuery: "Francisco Castrejón 75, 9na Demarcación, 42700 Mixquiahuala, Hgo.",
+  address: "Francisco Castrejón, 8va Demarcación, a un costado del Jardin de niños (Carlos Obregon Santacilia),Col, el Bondho, Mixquiahula de Juarez, Hgo.",
+  mapsQuery: "Francisco Castrejón, 8va Demarcación, 42700 Mixquiahuala de Juárez, Hgo.",
   sheetsEndpoint: "https://script.google.com/macros/s/AKfycbyuOBq_79BVGaS7CPoXm0-2JQRfpzIN1ZnRqGpZujWpPKPAYmEt_CXV1azhOwxJa6kl/exec"
 };
 
