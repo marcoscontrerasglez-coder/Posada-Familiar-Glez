@@ -8,7 +8,7 @@ const CONFIG = {
   time: "8:00 p. m.",
   place: "Salos de eventos Elixir",
   address: "Francisco Castrejón, 8va Demarcación, a un costado del Jardin de niños (Carlos Obregon Santacilia),Col, el Bondho, Mixquiahula de Juarez, Hgo.",
-  mapsQuery: "Garzas Boxing, 42700 Mixquiahuala de Juárez, Hgo.",
+  mapsQuery: "Elixir, 42700 Mixquiahuala de Juárez, Hgo.",
   sheetsEndpoint: "https://script.google.com/macros/s/AKfycbyuOBq_79BVGaS7CPoXm0-2JQRfpzIN1ZnRqGpZujWpPKPAYmEt_CXV1azhOwxJa6kl/exec"
 };
 
