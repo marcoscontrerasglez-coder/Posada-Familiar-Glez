@@ -14,34 +14,96 @@
 const SHEET_ID = "1okjDnEA5N46jnfR0H6kqRvq8sfzqjQ7Qv3X5n4liKL4";
 const TAB_NAME = "Respuestas";
 
-function doPost(e) {
+function obtenerHoja_() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let hoja = ss.getSheetByName(TAB_NAME);
+
+  if (!hoja) {
+    hoja = ss.insertSheet(TAB_NAME);
+  }
+
+  return hoja;
+}
+
+function responderJSON_(datos) {
+  return ContentService
+    .createTextOutput(JSON.stringify(datos))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Prueba que Apps Script puede abrir la hoja.
+function doGet(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
-    const ss = SpreadsheetApp.openById(SHEET_ID);
-    let sheet = ss.getSheetByName(TAB_NAME);
-    if (!sheet) sheet = ss.insertSheet(TAB_NAME);
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Fecha de envío","Asistencia","Nombre principal","Número de acompañantes","Nombres acompañantes","Participa intercambio","Participantes intercambio (nombre | talla | color)"]);
-    }
-    const participants = (data.participants || []).map(p => `${p.name} | ${p.size} | ${p.color}`).join("; ");
-    sheet.appendRow([
-      data.submittedAt || new Date().toISOString(),
-      data.attendance || "",
-      data.guestName || "",
-      data.companions ?? "",
-      data.companionNames || "",
-      data.vestExchange || "",
-      participants
-    ]);
-    return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ok:false,error:String(err)})).setMimeType(ContentService.MimeType.JSON);
+    const hoja = obtenerHoja_();
+
+    return responderJSON_({
+      ok: true,
+      mensaje: "Conexión correcta",
+      hoja: hoja.getName(),
+      spreadsheet: hoja.getParent().getName()
+    });
+  } catch (error) {
+    console.error("Error en doGet: " + error.stack);
+    throw error;
   }
 }
 
-function doGet(e) {
-  return ContentService
-    .createTextOutput("Apps Script funciona correctamente")
-    .setMimeType(ContentService.MimeType.TEXT);
-}
+// Recibe la confirmación y guarda sus campos en una fila.
+function doPost(e) {
+  try {
+    if (!e || !e.postData || !e.postData.contents) {
+      throw new Error("La solicitud llegó sin datos.");
+    }
 
+    const datos = JSON.parse(e.postData.contents);
+    const hoja = obtenerHoja_();
+
+    // Conserva los encabezados existentes y agrega campos nuevos.
+    let encabezados = [];
+
+    if (hoja.getLastRow() > 0) {
+      encabezados = hoja
+        .getRange(1, 1, 1, hoja.getLastColumn())
+        .getValues()[0]
+        .filter(String);
+    }
+
+    const campos = Object.keys(datos);
+    encabezados = [
+      ...new Set(["Fecha de recepción", ...encabezados, ...campos])
+    ];
+
+    hoja.getRange(1, 1, 1, encabezados.length)
+      .setValues([encabezados]);
+
+    const fila = encabezados.map(campo => {
+      if (campo === "Fecha de recepción") {
+        return new Date();
+      }
+
+      const valor = datos[campo];
+
+      if (valor === undefined || valor === null) {
+        return "";
+      }
+
+      return typeof valor === "object"
+        ? JSON.stringify(valor)
+        : valor;
+    });
+
+    hoja.appendRow(fila);
+    SpreadsheetApp.flush();
+
+    console.log("Confirmación guardada: " + datos.guestName);
+
+    return responderJSON_({
+      ok: true,
+      mensaje: "Confirmación guardada"
+    });
+
+  } catch (error) {
+    console.error("Error en doPost: " + error.stack);
+    throw error;
+  }
+}
