@@ -9,7 +9,7 @@ const CONFIG = {
   place: "Nombre del lugar",
   address: "Agrega aquí la dirección completa, ciudad y estado",
   mapsQuery: "Nombre del lugar, ciudad, estado",
-  sheetsEndpoint: "" // URL de implementación de Google Apps Script
+  sheetsEndpoint: "" // https://script.google.com/macros/s/AKfycbwtSd0L_UByywwe0pN-Y3ojyWWQOua-R3cCtX8NWOO6zd6Jquxqex1NCycfMKcvXQ-8/exec
 };
 
 const $ = (id) => document.getElementById(id);
