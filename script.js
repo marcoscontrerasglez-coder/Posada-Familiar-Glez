@@ -7,8 +7,8 @@ const CONFIG = {
   date: "Sábado 24 de diciembre de 2026",
   time: "8:00 p. m.",
   place: "Salos de eventos Komanche S,A",
-  address: "Agrega aquí la dirección completa, ciudad y estado",
-  mapsQuery: "Nombre del lugar, Mixquiahula de Juarez Hgo,",
+  address: "Francisco Castrejón, Mixquiahula de Juarez, Hgo.",
+  mapsQuery: "https://www.google.com/maps/@20.2262559,-99.2038761,1996a,75y,278.45h,89.89t/data=!3m7!1e1!3m5!1sGMiGplMF2JMctN0YgsvD5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.10635423041848924%26panoid%3DGMiGplMF2JMctN0YgsvD5Q%26yaw%3D278.44559888643727!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D, Mixquiahula de Juarez Hgo.",
   sheetsEndpoint: "https://script.google.com/macros/s/AKfycbyuOBq_79BVGaS7CPoXm0-2JQRfpzIN1ZnRqGpZujWpPKPAYmEt_CXV1azhOwxJa6kl/exec"
 };
 
