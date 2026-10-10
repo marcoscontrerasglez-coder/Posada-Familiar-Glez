@@ -11,7 +11,7 @@
  * Nota: como la web será pública, comparte el enlace solo con invitados y evita
  * recopilar información que no necesites. Las respuestas se guardan en la hoja.
  */
-const SHEET_ID = "PEGA_AQUI_EL_ID_DE_TU_GOOGLE_SHEET";
+const SHEET_ID = "1okjDnEA5N46jnfR0H6kqRvq8sfzqjQ7Qv3X5n4liKL4";
 const TAB_NAME = "Respuestas";
 
 function doPost(e) {
