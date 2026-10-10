@@ -6,7 +6,7 @@
 const CONFIG = {
   date: "Sábado 19 de diciembre de 2026",
   time: "7:00 p. m.",
-  place: "Nombre del lugar",
+  place: "Salos de eventos Komanche S,A",
   address: "Agrega aquí la dirección completa, ciudad y estado",
   mapsQuery: "Nombre del lugar, ciudad, estado",
   sheetsEndpoint: "" // https://script.google.com/macros/s/AKfycbwtSd0L_UByywwe0pN-Y3ojyWWQOua-R3cCtX8NWOO6zd6Jquxqex1NCycfMKcvXQ-8/exec
