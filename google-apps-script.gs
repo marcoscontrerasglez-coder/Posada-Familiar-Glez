@@ -38,3 +38,10 @@ function doPost(e) {
     return ContentService.createTextOutput(JSON.stringify({ok:false,error:String(err)})).setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+function doGet(e) {
+  return ContentService
+    .createTextOutput("Apps Script funciona correctamente")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
