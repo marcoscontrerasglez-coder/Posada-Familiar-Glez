@@ -4,7 +4,7 @@
  * como aplicación web y pega su URL en SHEETS_ENDPOINT.
  */
 const CONFIG = {
-  date: "Sábado 24 de diciembre de 2026",
+  date: "Jueves 24 de diciembre de 2026",
   time: "8:00 p. m.",
   place: "Salos de eventos Elixir",
   address: "Francisco Castrejón, 8va Demarcación, a un costado del Jardin de niños (Carlos Obregon Santacilia),Col, el Bondho, Mixquiahula de Juarez, Hgo.",
