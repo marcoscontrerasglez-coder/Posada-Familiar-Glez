@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251d">
+  <title>Posada Navideña · ¡Estás invitado!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="overlay"></div>
+      <div class="topbar">
+        <span class="brand">✦ POSADA NAVIDEÑA ✦</span>
+        <button class="music-button" id="musicToggle" type="button" aria-pressed="false">♫ Activar música</button>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Una noche para compartir</p>
+        <h1>¡Celebremos<br><em>la Navidad!</em></h1>
+        <p class="intro">Luces, buenos deseos y momentos para recordar.<br>Nos encantaría celebrar contigo.</p>
+        <div class="event-summary">
+          <div><span class="summary-icon">📅</span><span><small>FECHA</small><strong id="heroDate">Sábado 19 de diciembre de 2026</strong></span></div>
+          <div><span class="summary-icon">🕖</span><span><small>HORA</small><strong id="heroTime">7:00 p. m.</strong></span></div>
+          <div><span class="summary-icon">📍</span><span><small>LUGAR</small><strong id="heroPlace">Nombre del lugar, ciudad</strong></span></div>
+        </div>
+        <a class="button button-gold" href="#confirmar">Confirmar asistencia <span>→</span></a>
+        <p class="hero-note">Ven con espíritu navideño y ganas de pasarla bien.</p>
+      </div>
+      <div class="snow snow-one">✧</div><div class="snow snow-two">❄</div><div class="snow snow-three">✦</div>
+    </section>
+
+    <section class="details section-wrap">
+      <div class="section-heading">
+        <p class="eyebrow green">GUARDA LA FECHA</p>
+        <h2>La magia se vive <em>juntos</em></h2>
+        <p>Prepara tu mejor sonrisa: habrá convivencia, alegría y nuestro esperado intercambio de chalecos.</p>
+      </div>
+      <div class="detail-grid">
+        <article class="detail-card"><span class="detail-symbol">✧</span><h3>¿Cuándo?</h3><p id="detailDate">Sábado 19 de diciembre de 2026</p><p id="detailTime">7:00 p. m.</p></article>
+        <article class="detail-card"><span class="detail-symbol">⌖</span><h3>¿Dónde?</h3><p id="detailPlace">Nombre del lugar</p><p id="detailAddress">Agrega aquí la dirección completa</p><a id="mapsLink" href="https://maps.google.com/" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></article>
+        <article class="detail-card"><span class="detail-symbol">🎁</span><h3>Intercambio</h3><p>¿Te unes al intercambio de chalecos?</p><p>Indica los nombres, tallas y colores de quienes participarán en el formulario.</p></article>
+      </div>
+    </section>
+
+    <section class="rsvp" id="confirmar">
+      <div class="rsvp-copy">
+        <p class="eyebrow">TU RESPUESTA ES IMPORTANTE</p>
+        <h2>¿Nos acompañas<br><em>esta Navidad?</em></h2>
+        <p>Confirma tu asistencia para ayudarnos a preparar una noche increíble.</p>
+        <div class="rsvp-actions">
+          <button class="button button-gold" id="yesBtn" type="button">¡Sí, ahí estaré! ✨</button>
+          <button class="button button-outline" id="noBtn" type="button">No podré asistir</button>
+        </div>
+        <p class="status-message" id="rsvpStatus" role="status"></p>
+      </div>
+      <form id="rsvpForm" class="form-card" hidden>
+        <div class="form-heading"><span class="form-step">01 / CONFIRMACIÓN</span><h3>¡Qué alegría que vengas!</h3><p>Cuéntanos un poco para organizar todo.</p></div>
+        <label for="guestName">Tu nombre completo *</label>
+        <input id="guestName" name="guestName" autocomplete="name" required placeholder="Escribe tu nombre">
+        <label for="companions">¿Cuántos acompañantes llevarás? *</label>
+        <select id="companions" name="companions" required>
+          <option value="0">Voy sin acompañantes</option><option value="1">1 acompañante</option><option value="2">2 acompañantes</option><option value="3">3 acompañantes</option><option value="4">4 acompañantes</option><option value="5">5 acompañantes</option><option value="6">6 o más</option>
+        </select>
+        <div id="companionNamesWrap" hidden>
+          <label for="companionNames">Nombres de tus acompañantes</label>
+          <textarea id="companionNames" name="companionNames" rows="2" placeholder="Un nombre por línea"></textarea>
+        </div>
+        <div class="form-divider"></div>
+        <fieldset>
+          <legend>¿Participarás en el intercambio de chalecos? *</legend>
+          <label class="radio-option"><input type="radio" name="vestExchange" value="Sí" required> Sí, participaré</label>
+          <label class="radio-option"><input type="radio" name="vestExchange" value="No" required> No participaré</label>
+        </fieldset>
+        <div id="participantsSection" hidden>
+          <div class="participant-heading"><h4>Participantes del intercambio</h4><p>Agrega a cada persona que participará, incluyéndote si aplica.</p></div>
+          <div id="participantsList"></div>
+          <button class="button button-outline add-person" id="addParticipant" type="button">＋ Agregar participante</button>
+        </div>
+        <button class="button button-green submit-button" id="submitBtn" type="submit">Enviar confirmación <span>→</span></button>
+        <p class="form-footnote">Tus datos se usarán únicamente para organizar la posada y el intercambio.</p>
+        <p class="status-message" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+    <section class="map-section section-wrap">
+      <div><p class="eyebrow green">CÓMO LLEGAR</p><h2>Nos vemos <em>ahí</em></h2><p id="mapAddressText">Agrega la dirección del evento para que todos puedan llegar fácilmente.</p><a class="button button-green" id="mapsButton" href="https://maps.google.com/" target="_blank" rel="noopener">Ver ubicación en Maps ↗</a></div>
+      <div class="map-frame"><iframe id="mapFrame" title="Ubicación del evento en Google Maps" src="https://maps.google.com/maps?q=Mexico&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </section>
+
+    <footer><div class="footer-star">✦</div><p>Que la alegría de estas fiestas nos reúna.</p><span>POSADA NAVIDEÑA · 2026</span></footer>
+  </main>
+  <audio id="backgroundMusic" loop preload="none">
+    <!-- Coloca tu archivo navideno.mp3 en la carpeta assets y descomenta la línea siguiente -->
+    <!-- <source src="assets/navideno.mp3" type="audio/mpeg"> -->
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>
