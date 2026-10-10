@@ -4,11 +4,11 @@
  * como aplicación web y pega su URL en SHEETS_ENDPOINT.
  */
 const CONFIG = {
-  date: "Sábado 19 de diciembre de 2026",
-  time: "7:00 p. m.",
+  date: "Sábado 24 de diciembre de 2026",
+  time: "8:00 p. m.",
   place: "Salos de eventos Komanche S,A",
   address: "Agrega aquí la dirección completa, ciudad y estado",
-  mapsQuery: "Nombre del lugar, ciudad, estado",
+  mapsQuery: "Nombre del lugar, Mixquiahula de Juarez Hgo,",
   sheetsEndpoint: "https://script.google.com/macros/s/AKfycbyuOBq_79BVGaS7CPoXm0-2JQRfpzIN1ZnRqGpZujWpPKPAYmEt_CXV1azhOwxJa6kl/exec"
 };
 
